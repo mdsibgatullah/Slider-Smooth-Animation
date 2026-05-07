@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <section class="msm__hero">
+        <div class="container-fluid">
+            <div class="msm__hero-wrapper">
+                <div class="msm__hero-media">
+                    <figure class="msm__hero-image">
+                        <img class="msm_img" src="assets/image/hero.jpg" alt="hero">
+                    </figure>
+                    <figure class="msm__hero-image">
+                        <img class="msm_img" src="assets/image/hero2.jpg" alt="hero">
+                    </figure>
+                    <figure class="msm__hero-image">
+                        <img class="msm_img" src="assets/image/hero3.jpg" alt="hero">
+                    </figure>
+                    <figure class="msm__hero-image">
+                        <img class="msm_img" src="assets/image/hero6.jpg" alt="hero">
+                    </figure>
+                    <figure class="msm__hero-image">
+                        <img class="msm_img" src="assets/image/hero5.jpg" alt="hero">
+                    </figure>
+                    <figure class="msm__hero-image">
+                        <img class="msm_img" src="assets/image/hero6.jpg" alt="hero">
+                    </figure>
+                    <figure class="msm__hero-image">
+                        <img class="msm_img" src="assets/image/hero7.jpg" alt="hero">
+                    </figure>
+                </div>
+                <div class="msm__hero-collection">
+                    <ul class="msm__hero-collection-list">
+                        <li class="msm__hero-collection-item"><span>Vans</span><sup>7</sup></li>
+                        <li class="msm__hero-collection-item"><span>Jordan</span><sup>2</sup></li>
+                        <li class="msm__hero-collection-item"><span>Nike Air</span><sup>14</sup></li>
+                        <li class="msm__hero-collection-item"><span>Converse</span><sup>2</sup></li>
+                        <li class="msm__hero-collection-item"><span>Asics</span><sup>s</sup></li>
+                        <li class="msm__hero-collection-item"><span>Crocs</span><sup>12</sup></li>
+                        <li class="msm__hero-collection-item"><span>Reebok</span><sup>12</sup></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        const itemList = document.querySelector('.msm__hero-collection-list');
+        const imageList = document.querySelector('.msm__hero-media');
+
+        let intervalId = null;
+        let hoverTransition = null;
+
+        function setActiveItem() {
+            const collectionItems = itemList.querySelectorAll('.msm__hero-collection-item');
+            collectionItems.forEach((item) => item.classList.remove('active'));
+            collectionItems[3].classList.add('active');
+
+            const collectionImages = imageList.querySelectorAll('.msm__hero-image');
+            collectionImages.forEach((img) => img.classList.remove('active'));
+            collectionImages[3].classList.add('active');
+        }
+
+        function startSlider() {
+            if (intervalId) return;
+            intervalId = setInterval(() => {
+                const firstItem = itemList.querySelector('.msm__hero-collection-item');
+                const firstImage = imageList.querySelector('.msm__hero-image');
+                itemList.appendChild(firstItem);
+                imageList.appendChild(firstImage);
+                setActiveItem();
+            }, 3000);
+        }
+
+        function stopSlider() {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+
+        setActiveItem();
+        startSlider();
+
+        itemList.addEventListener("mouseenter", stopSlider);
+        itemList.addEventListener("mouseleave", startSlider);
+
+        const collectionItems = itemList.querySelectorAll('.msm__hero-collection-item');
+        const collectionImages = imageList.querySelectorAll('.msm__hero-image');
+
+        collectionItems.forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+                collectionItems.forEach((i) => i.classList.remove('active'));
+                collectionItems[index].classList.add('active');
+
+                collectionImages.forEach((img) => img.classList.remove('active'));
+                collectionImages[index].classList.add('active');
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

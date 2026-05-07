@@ -1,0 +1,157 @@
+body{
+  padding: 0px;
+  margin: 0px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.container-fluid {
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.msm__hero-wrapper {
+  min-height: 790px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+figure {
+  margin: 0px;
+}
+
+.msm__hero-media {
+  position: relative;
+}
+
+.msm__hero-image {
+  position: absolute;
+  line-height: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  opacity: 1;
+  transition: all 2.5s ease-in-out;
+}
+
+.msm__hero-image .msm_img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.msm__hero-image.active {
+  animation: fade-in 2.5s forwards;
+}
+
+.msm__hero-image:nth-child(3) {
+  z-index: 1;
+}
+
+.msm__hero-collection {
+  display: grid;
+  align-items: center;
+}
+
+.msm__hero-collection-list {
+  height: 616px;
+  padding-right: 60px;
+  overflow: hidden;
+}
+
+.msm__hero-collection-item {
+  position: relative;
+  text-align: right;
+  margin-top: 40px;
+  color: #1c1c1c78;
+  font-size: 32px;
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+.msm__hero-collection-item sup {
+  position: absolute;
+  top: 0;
+  left: 101%;
+  font-size: 18px;
+}
+
+.msm__hero-collection-item:first-child {
+  margin-top: 0px;
+  font-size: 32px;
+}
+
+.msm__hero-collection-item:first-child sup {
+  font-size: 18px;
+  top: 0rem;
+}
+
+.msm__hero-collection-item:nth-child(2) {
+  font-size: 42px;
+}
+
+.msm__hero-collection-item:nth-child(2) sup {
+  font-size: 23px;
+}
+
+.msm__hero-collection-item:nth-child(3) {
+  font-size: 52px;
+}
+
+.msm__hero-collection-item:nth-child(3) sup {
+  font-size: 28px;
+}
+
+.msm__hero-collection-item:nth-child(4) {
+  font-size: 52px;
+}
+
+.msm__hero-collection-item:nth-child(4) sup {
+  font-size: 28px;
+}
+
+.msm__hero-collection-item.active,
+.msm__hero-collection-item:hover {
+  color: #1c1c1c;
+}
+
+.msm__hero-collection-item:nth-child(5) {
+  font-size: 52px;
+}
+
+.msm__hero-collection-item:nth-child(5) sup {
+  font-size: 28px;
+}
+
+.msm__hero-collection-item:nth-child(6) {
+  font-size: 42px;
+}
+
+.msm__hero-collection-item:nth-child(6) sup {
+  font-size: 23px;
+}
+
+.msm__hero-collection-item:last-child {
+  margin-bottom: 0px;
+  font-size: 32px;
+}
+
+.msm__hero-collection-item:last-child sup {
+  font-size: 18px;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    z-index: 2;
+    transform: translateX(0px);
+  }
+}
