@@ -18,7 +18,7 @@ CSS (keyframe animation, nth-child sizing)
 Vanilla JavaScript (setInterval, classList, DOM manipulation)
 
 How to Use
-bashgit clone https://github.com/mdsibgatullah/Slider-Smooth-Animation.git
+git clone https://mdsibgatullah.github.io/Slider-Smooth-Animation/
 cd Slider-Smooth-Animation
 Then open index.html in your browser.
 How It Works
