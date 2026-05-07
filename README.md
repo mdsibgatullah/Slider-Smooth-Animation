@@ -3,13 +3,6 @@ Slider Smooth Animation
 A smooth collection slider with fade-in animation and hover interaction. Built with vanilla HTML, CSS, and JavaScript.
 Live Demo: View Live
 
-<table>
-  <tr>
-    <td><img src="./git-details/screenshot1.png" alt="slider screenshot"/></td>
-    <td><img src="./git-details/screenshot2.png" alt="slider screenshot"/></td>
-  </tr>
-</table>
-
 Features
 
 Auto-sliding every 3 seconds
