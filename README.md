@@ -1,4 +1,5 @@
 # Slider-Smooth-Animation
+---
 Slider Smooth Animation
 A smooth collection slider with fade-in animation and hover interaction. Built with vanilla HTML, CSS, and JavaScript.
 Live Demo: View Live
